@@ -1,0 +1,6 @@
+enqueue front Bob
+enqueue end Marie
+enqueue front Charlie
+enqueue front Charles
+dequeue
+dequeue
