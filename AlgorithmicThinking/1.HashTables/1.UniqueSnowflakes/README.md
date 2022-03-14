@@ -14,3 +14,11 @@ The first line of input will contain a single integer n , 0 < n ≤ 100,000 , th
 If all of the snowflakes are distinct, your program should print the message: `No two snowflakes are alike`.
 
 If there is a pair of possibly identical snowflakes, your program should print the message: `Twin snowflakes found`.
+
+## Test Cases
+1. Snowflakes _a_ and _b_ where _a_ and _b_ are `alike`.
+1. Snowflakes _a_ and _b_ where _a_ and _b_ are `alike` and _b_ is rotated left/right.
+1. Snowflakes _a_ and _b_ where _a_ and _b_ are `alike` and _b_ is flipped vertically/horizontally.
+1. Snowflakes _a_ and _b_ where _a_ and _b_ are `alike` and has repeating arms. Example: `0 0 0 0 0 0`, or `0 1 2 2 1 0`
+1. Snowflakes _a_ and _b_ where _a_ and _b_ are `not alike`.
+1. Snowflakes _a_ and _b_ where _a_ and _b_ are `alike` except one arm.
