@@ -14,8 +14,11 @@ However, your coal is to collect __all__ of the candy and to do so by walking th
 
 ## Input
 
-The input consists of exactly five lines, where each line is a string of at most 255 characters that describes a neighborhood.
+The example tree above will have the following input string.
+(((72 3) (6 (((4 9) 15) 2))) (7 41))
 
 ## Output
 
-Our output will be five lines of text, with each line corresponding to one of the five input lines. EAch lines of output contains two integers separated by a space: the minimum number of streets walked to obtain all of the candy and the total amount of candy obtained.
+Given the string above, write a program that can get all the candies in the least amounts of moves.
+
+The sample minimum move is 26.
