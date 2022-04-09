@@ -20,10 +20,13 @@ int treeCandy( node* root );
 int countLeaves( node* root );
 int countStreets( node* root );
 int getHeight( node* root );
+node* read_tree( char* input );
+node* read_tree_helper(char* input, int* pos );
 
 // Input (((72 3) (6 (((4 9) 15) 2))) (7 41))
 int main(int argc, char *argv[])
 {
+    /**
     node* g_left = newHouse( 7 );   
     node* g_right = newHouse( 41 );   
     node* g  = newDivergence( g_left, g_right );   
@@ -48,6 +51,9 @@ int main(int argc, char *argv[])
     node* f = newDivergence( a, e );
 
     node* root = newDivergence( f, g);   
+     */
+
+    node* root = read_tree( "(((72 3) (6 (((4 9) 15) 2))) (7 41))" );
 
     int totalCandy = treeCandy( root );
     printf("Total Candy: %d\n", totalCandy);
@@ -61,7 +67,40 @@ int main(int argc, char *argv[])
     int height = getHeight( root );
     printf("Longest street: %d\n", height);
 
+
     return 0;
+}
+
+node* read_tree( char* input ) {
+    int pos = 0;
+    return read_tree_helper( input, &pos );
+}
+
+node* read_tree_helper(char* input, int* pos ) {
+    node* tree = malloc( sizeof(node) );
+    if ( tree == NULL ) {
+        fprintf( stderr, "malloc error on tree\n" );
+        exit(1);
+    }
+    if ( input[*pos] == '(' ) {
+        (*pos)++;
+        tree->left = read_tree_helper( input, pos );
+        (*pos)++;
+        tree->right = read_tree_helper( input, pos );
+        (*pos)++;
+        return tree;
+    }
+    else {
+        tree->left = NULL;
+        tree->right = NULL;
+        tree->candy = input[*pos] - '0';
+        (*pos)++;
+        if (input[*pos] != ')' && input[*pos] != ' ' && input[*pos] != '\0' ) {
+            tree->candy = tree->candy * 10 + input[*pos] - '0';
+            (*pos)++;
+        }
+        return tree;
+    }
 }
 
 // Assuming we can stop once we reach the last house, get the min street walk
