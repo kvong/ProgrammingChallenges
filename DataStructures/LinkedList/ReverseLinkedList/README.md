@@ -17,3 +17,17 @@ With those three variable we can solve the problem by:
     7. Update the previous node as the current node.
     8. Update the new next node as the next-next node we saved in step 6.
     9. Go back to step 3 until we can no longer proceed.
+    
+    
+# Solution steps (RECURSIVE):
+
+1. `Node* node = ReverseLinkedList( head->next )`
+    - If termination condition is not met go to the end of the list until it's met.
+    - If termination condition is met, node will equal `head->next`.
+2. `head->next->next = head`
+    - On reaching the termination condition, `head->next->next` which would be *NULL* will now be the current head;
+    - In other word, `node->next` will now be the current `head`.
+3. `head->next = NULL`
+    - This is adds the *NULL* to the end of the now reversed linked list.
+4. `return node`
+    - Return the reversed linked list from this recursive call.
