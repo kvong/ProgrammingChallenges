@@ -21,7 +21,7 @@ For each testcase:
 4 2 90 -> 45
 ```
 
-Progress:
-[x] Implement Recursive Solution
-[ ] Implement Memoization Solution
-[ ] Implement Dynamic Programming Solution
+### Progress:
+- [ x ] Implement Recursive Solution
+- [   ] Implement Memoization Solution
+- [   ] Implement Dynamic Programming Solution
