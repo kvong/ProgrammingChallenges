@@ -13,8 +13,10 @@ For each testcase:
 - Otherwise, output the maximum number of burgers that Homer can eat when maximizing his time eating burgers, a space, and the number of remaining minutes (during which he'll drink beer).
 
 ### Test cases
+```
 4 9 22 -> 3
 4 9 15 -> 2 2
 4 9 54 -> 11
 4 2 88 -> 44
 4 2 90 -> 45
+```
