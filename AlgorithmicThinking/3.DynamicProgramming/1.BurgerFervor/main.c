@@ -129,6 +129,7 @@ void solve( int m, int n, int t ) {
     }
     // result = solve_t_r( m, n, t );
     result = solve_t_m( m, n, t, memo);
+
     if ( result >= 0 ) {
         printf( "%d burgers eaten\n", result );
     }
@@ -142,5 +143,36 @@ void solve( int m, int n, int t ) {
             result = solve_t_m( m, n, i, memo);
         }
         printf( "%d burgers eaten, %d min drinking\n", result, t - i );
+    }
+
+    int dp[t + 1];
+    dp[0] = 0;
+    for (i = 1; i < t + 1; i++) {
+        dp[i] = -1;   
+    }
+
+    int first, second;
+    for (i = 1; i < t + 1; i++) {
+        first = -1;
+        second = -1;
+        if ( i >= m ) {
+            if ( dp[i - m] != -1 ) {
+                first = dp[i - m] + 1;
+            }
+        }
+        if ( i > n ) {
+            if ( dp[i - n] != -1 ) {
+                second = dp[i - n] + 1;
+            }
+        }
+        dp[i] = max(first, second);
+    }
+
+
+    for (i = t; i > 0; i--) {
+        if ( dp[i] != -1 ) {
+            printf( "%d burgers eaten. %d min drinking beer\n", dp[i], t - i );
+            break;
+        }
     }
 }
