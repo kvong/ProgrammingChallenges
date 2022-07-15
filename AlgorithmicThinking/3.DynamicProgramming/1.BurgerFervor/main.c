@@ -8,6 +8,7 @@ int solve_t_d( int, int, int );
 void solve( int, int, int );
 int max( int x, int y );
 int * time_table;
+
 int main(int argc, char *argv[])
 {
     int i;
@@ -127,7 +128,11 @@ void solve( int m, int n, int t ) {
     for (i = 0; i <= t; i++) {
         memo[i] = -2;
     }
+
+    // Recursive Solution
     // result = solve_t_r( m, n, t );
+    
+    // Recursive Solution above with memo table
     result = solve_t_m( m, n, t, memo);
 
     if ( result >= 0 ) {
@@ -145,6 +150,7 @@ void solve( int m, int n, int t ) {
         printf( "%d burgers eaten, %d min drinking\n", result, t - i );
     }
 
+    // Dynamic Programming solution
     int dp[t + 1];
     dp[0] = 0;
     for (i = 1; i < t + 1; i++) {
