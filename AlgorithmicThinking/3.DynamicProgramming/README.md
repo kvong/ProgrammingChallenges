@@ -14,7 +14,22 @@ The main take away here is to arrive at a base solution where the truth is defin
 With a base case established, we can move forward with finding a recursive solution. It can be difficult because we are offsetting the problem to the solution to the next subproblem. A useful tip to prove the correctness of a recursive solution is to try to prove it using induction with the base case being our optimal solution above. For example, if we are trying to solve *f(x)* but *f(x)* depends on the solution of *f(x-1)*. This is find, we'll simply keep on subtracting *x* until we reach the termination condition we established while finding the Optimal Solution. From there, everything will unravel itself and we'll be able to solve the whole problem.
 
 ### 3. Implement Memoization on top of Recursive Solution
- 
-### 4. Dynamic Progamming
+Although we had established a recursive solution, another problem we'll see is that recursive solutions has a lot of overlaps. To solve the overlapping subproblems of recursion, we'll implement a lookup table. For example, once we are done with solving a subproblem, we'll store it so that the next time we face this problem again, we'll use the memo table for a quick lookup.
 
+With memoization, the number of subproblems we have to solve reduces significantly. In most cases, an exponential timed algorithm will be reduced to linear time.
+ 
 ## Top-down vs bottom-up
+In steps 1-3 we discussed how to develop a recursive solution and optimize it. Memoization is what's known as a top-down approach. Imagine a binary tree representing our function calls. To get the root solution, we divide the problem into subproblems. It is not until we drill down to the finest subproblem ( the base case ) that we return i.e. move back up the tree. Doing so, we essentially traversed the recursion tree top-down and back up again to get to the root solution.
+
+### 4. Dynamic Progamming
+The top-down approach will optimize our code well enough to achieve linear time but there's another way to achieve the same result. Rather than top-down, dynamic programming uses a bottom-up approach. This means that instead of asking how can we arive at an answer, we be asking how we can build this answer. To do this, we'll use a loop to build out our solution.
+
+Observe that when implement the recursive solution, we are essentrially drilling down to the base case. Thus, if we can any of our problem down into a base case, can we not also build up the base case to arrive at our problem?
+
+The thoughts behind dynamic programming is the following:
+1. Start with the base case.
+2. Build off the base case. Because the base case is used to prove all subsequent cases we can conclude that all the subsequent cases will be correct. This idea is similar to the unraveling of the recursion tree after all the subproblems has been solved.
+3. With the proven subsequent base cases, we can use our new base cases to go further until we reach the solution we are looking for.
+
+Unlike the recursive solution, where we lookup our previous solutions, the dynamic programming solutions utilizes a look-back approach. This look-back is to get our newly proven base case.
+
