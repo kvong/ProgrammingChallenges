@@ -32,3 +32,11 @@ The thoughts behind dynamic programming is the following:
 3. With the proven subsequent base cases, we can use our new base cases to go further until we reach the solution we are looking for.
 
 Unlike the recursive solution, where we lookup our previous solutions, the dynamic programming solutions utilizes a look-back approach. This look-back is to get our newly proven base case. Similarly to the memoization lookup, this lookback is also a constant time lookup.
+
+
+## Using 2-D Array
+In some cases, we'll need to find optimal solution between **two** lists (like the '3. Hockey Rivalry' problem). These types of problems are quite common, and it can be broken down as into 4 scenarios.
+1. List item *a[i]* is a hit with *b[j]*.
+2. List item *a[i]* is not a hit with *b[j]*.
+3. There may be a hit in *a[i-1:]* with *b[j:]*.
+4. List item *a[i:]* is may be a hit with *b[j-1:]*.
