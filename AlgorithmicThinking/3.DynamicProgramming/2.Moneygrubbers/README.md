@@ -15,11 +15,11 @@ Tell the user which scheme to use and how much they'll need to spend.
 Build a table using dynamic programming 'bottom-up' approach. We start by filling out the first row; which is the base case of buying apples without any schemes applied. From the base case, we move to the next row, if the row doesnt have a scheme then we will use the value of the previous row. If the row does have a scheme, we'll use a scheme of the previous row up until where we can use the scheme.
 
 |Schemes| | |
-|-----------------------------------------|
+|----| |----| |----|
 | 1 for $1.75 | 2 for $2.00 | 4 for $3.00 |
 
 |DP Table| | | |
-|-----------------------------|
+|----| |----| |----| |----| |----|
 |1| $1.75| $3.50| $5.25| $7.00|
 |2| $1.75| $2.00| $3.75| $4.00|
 |3| $1.75| $2.00| $3.75| $4.00|
