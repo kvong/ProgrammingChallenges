@@ -22,4 +22,4 @@ touch "problems/$difficulty/$dir_name/README.md"
 touch "problems/$difficulty/$dir_name/solution_$username.py"
 
 echo "Created directory: problems/$difficulty/$dir_name"
-cd ./problems/$difficulty/$dir_name
+z ./problems/$difficulty/$dir_name
