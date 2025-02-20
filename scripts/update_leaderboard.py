@@ -44,7 +44,7 @@ if os.path.exists(readme_path):
     end_marker = "<!-- Leaderboard End -->"
 
     # Define the new leaderboard content
-    new_leaderboard = f"{start_marker}\n## 🏆 Leaderboard\n\n{table}\n{end_marker}"
+    new_leaderboard = f"{start_marker}\n## 🏆 Leetcode Problems Solved\n\n{table}\n{end_marker}"
 
     # Use regex to replace the existing leaderboard section
     if re.search(f"{start_marker}.*?{end_marker}", content, re.DOTALL):
