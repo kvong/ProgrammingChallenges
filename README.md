@@ -9,6 +9,6 @@ Each folder is a different resource. Newer resources will have better notes.
 
 | Participant | Easy | Medium | Hard | Total |
 |-------------|------|--------|------|-------|
-| Kvong | 4 | 0 | 0 | 4 |
+| Kvong | 5 | 1 | 0 | 6 |
 
 <!-- Leaderboard End -->
