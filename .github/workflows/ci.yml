@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 12 * * *' # Runs everyday
+    - cron: '0 6 * * *' # Runs everyday
 
 jobs:
   update-leaderboard:
