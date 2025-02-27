@@ -1,11 +1,11 @@
-name: Update Leaderboard
+name: Update Leaderboar
 
 on:
   push:
     branches:
       - main
   schedule:
-    - cron: '0 6 * * *' # Runs everyday
+    - cron: '0 6 1 * *' # Runs Weekly
 
 jobs:
   update-leaderboard:
